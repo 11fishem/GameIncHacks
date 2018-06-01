@@ -17,23 +17,29 @@ var goodNames = ["Hype Lord",
     "Scrub Master",
     "Karl"
 ];
-createGame();
-finishCreateGame(0);
 
 function hireSingleEmployee() {
-        var namesAvailable = [];
-        var availableIndex = -1;
-        document.querySelector('.hireTalentButton').click();
-        document.querySelectorAll('.name').forEach(function(e) {
-            var employeeName = e.innerHTML;
-            namesAvailable.push(employeeName);
-        });
-        for (i = 0; i <= goodNames.length - 1; i++) {
-            name = goodNames[i];
-            availableIndex = namesAvailable.indexOf(name);
-            if (availableIndex != -1) break;
-        }
-        finishHireTalent(availableIndex);
-        var namesAvailable = [];
-        var availableIndex = -1;
-    };
+    var namesAvailable = [];
+    var availableIndex = -1;
+    document.querySelector('.hireTalentButton').click();
+    document.querySelectorAll('.name').forEach(function(e) {
+        var employeeName = e.innerHTML;
+        namesAvailable.push(employeeName);
+    });
+    for (i = 0; i <= goodNames.length - 1; i++) {
+        name = goodNames[i];
+        availableIndex = namesAvailable.indexOf(name);
+        if (availableIndex != -1) break;
+    }
+    finishHireTalent(availableIndex);
+    var namesAvailable = [];
+    var availableIndex = -1;
+};
+
+function makeGameandHire() {
+    createGame();
+    finishCreateGame(0);
+    for (i = 0; i < 3; i++) {
+        hireSingleEmployee();
+    }
+};
