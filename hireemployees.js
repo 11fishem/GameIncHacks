@@ -1,7 +1,7 @@
-///For making games
 var goodNames = [
-    "Prodigy",
     "Scotty",
+    "Steve Lobs",
+    "Prodigy",
     "Jeff Basil",
     "Steve Poz",
     "Mr. Robot",
