@@ -1,7 +1,9 @@
 function makeGame() {
     createGame()
     finishCreateGame(0)
-    function hireEmployees() {
+    hireEmployees()
+}
+function hireEmployees() {
         let hireButton = document.querySelector('.hireTalentButton')
         hireButton.click()
         let employeeList = document.querySelector('tbody')
@@ -12,7 +14,7 @@ function makeGame() {
            let employeeID = config.employees.findIndex(i=> i.name === employeeName)
            employee[i] = Object.assign({}, config.employees[employeeID])
         }
-        console.log(employee)
-    }
-    hireEmployees()
+        if(employee[0].workSpeed > -1 && employee[0].salary < 300000000 && employee[0].hype > -1){employee[0].safe = true} else {employee[0].safe = false}
+        if(employee[1].workSpeed > -1 && employee[1].salary < 300000000 && employee[1].hype > -1){employee[1].safe = true} else {employee[1].safe = false}
+
 }
