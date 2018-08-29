@@ -17,12 +17,16 @@ function hireEmployees() {
         if(employee[0].workSpeed > -1 && employee[0].salary < 300000000 && employee[0].hype > -1){employee[0].safe = true} else {employee[0].safe = false}
         if(employee[1].workSpeed > -1 && employee[1].salary < 300000000 && employee[1].hype > -1){employee[1].safe = true} else {employee[1].safe = false}
         if(employee[0].safe && employee[1].safe){
-        console.log('both are safe') 
+            if(employee[0].rarity > employee[1].rarity){
+                finishHireTalent(0)
+            } else {
+                finishHireTalent(1)
+            }
         } else if(employee[0].safe){
-        console.log('hire random') 
+            finishHireTalent(0) 
         } else if(employee[1].safe){
-        console.log('hire random') 
+            finishHireTalent(1) 
         } else {
-         console.log('hire random')   
+         finishHireTalent(2)
         }
 }
