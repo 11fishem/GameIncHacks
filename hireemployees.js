@@ -41,4 +41,4 @@ function hireEmployees() {
         }
 }
 
-var myVar = setInterval(makeGame, 3000);
+var myVar = setInterval(makeGame, 5000);
