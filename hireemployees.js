@@ -28,9 +28,9 @@ function hireEmployees() {
             finishHireTalent(0) 
         } else if(employee[1].safe){
             finishHireTalent(1) 
-        } else if(employee[0].workSpeed > -100 && employee[0].hype > -300001){
+        } else if(employee[0].workSpeed > -100 && employee[0].hype > -300001 && employee[0].salary < 1000001){
          finishHireTalent(0)
-        } else if(employee[1].workSpeed > -100 && employee[0].hype > -300001){
+        } else if(employee[1].workSpeed > -100 && employee[0].hype > -300001 && employee[1].salary < 1000001){
          finishHireTalent(1)
         } else {
          finishHireTalent(2)
