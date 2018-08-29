@@ -1,7 +1,9 @@
 function makeGame() {
     createGame()
     finishCreateGame(0)
-    hireEmployees()
+    setTimeout(hireEmployees, 300)
+    setTimeout(hireEmployees, 900)
+    setTimeout(hireEmployees, 1500)
 }
 function hireEmployees() {
         let hireButton = document.querySelector('.hireTalentButton')
@@ -30,3 +32,5 @@ function hireEmployees() {
          finishHireTalent(2)
         }
 }
+
+var myVar = setInterval(makeGame, 3000);
