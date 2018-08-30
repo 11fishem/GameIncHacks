@@ -8,8 +8,7 @@ function suebot() {
 	setTimeout(hireLawyer(10), 1000)
     }, 100);
 }
-function hireLawyer(lawsuitSize) {
-	for(i = 0; i < lawsuitSize; i++){
+function hireLawyer() {
 	document.querySelector('.hireTalentButton').click();
 	let employeeList = document.querySelector('tbody')
 	let employeeInfo = employeeList.querySelectorAll('.infoHolder')
@@ -17,9 +16,14 @@ function hireLawyer(lawsuitSize) {
 	for( i = 0 ; i < employeeInfo.length ; i++){
 	   var employeeName = employeeInfo[i].querySelector('.label').innerHTML
 	   let employeeID = config.lawyers.findIndex(i=> i.name === employeeName)
-	   employee[i] = Object.assign({}, config.employees[employeeID])
+	   employee[i] = Object.assign({}, config.lawyers[employeeID])
 	}
-	if(employee[0].workSpeed > employee[1].workSpeed){finishHireTalent(0)} else if(employee[1].workSpeed > employee[0].workSpeed){finishHireTalent(1)} else {finishHireTalent(-1)}
-	}
+	console.log(employee[0].name,employee[0].workSpeed,employee[1].name,employee[1].workSpeed)
+	if(employee[0].workSpeed > 0){
+		if(employee[0].workSpeed > employee[1].workSpeed){finishHireTalent(0)} 
+		else if(employee[1].workSpeed > employee[0].workSpeed){finishHireTalent(1)} 
+		else {finishHireTalent(-1)}
+	} else if(employee[1].workSpeed > 0){finishHireTalent(1)} 
+	else {finishHireTalent(-1)}
 }
  suebot();
