@@ -19,11 +19,11 @@ function hireLawyer() {
 	   employee[i] = Object.assign({}, config.lawyers[employeeID])
 	}
 	console.log(employee[0].name,employee[0].workSpeed,employee[1].name,employee[1].workSpeed)
-	if(employee[0].workSpeed > 0){
+	if(employee[0].workSpeed >= 0){
 		if(employee[0].workSpeed > employee[1].workSpeed){finishHireTalent(0)} 
 		else if(employee[1].workSpeed > employee[0].workSpeed){finishHireTalent(1)} 
 		else {finishHireTalent(-1)}
-	} else if(employee[1].workSpeed > 0){finishHireTalent(1)} 
+	} else if(employee[1].workSpeed >= 0){finishHireTalent(1)} 
 	else {finishHireTalent(-1)}
 }
  suebot();
