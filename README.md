@@ -8,4 +8,4 @@ autotyperformoney.js enter into the console to have the increment for more money
 
 suebot.js sues the top person in fast for loop for lots of money
 
-![game](gameinchacks.jpg)
+![game](gameinchacks.JPG)
